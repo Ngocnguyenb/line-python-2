@@ -43,6 +43,12 @@ fig = px.line(
     color="Current_Job_Level",
     markers=True,
     line_shape="linear",
+    hover_name="Current_Job_Level",
+    hover_data={
+        "Years_to_Promotion": True,
+        "Work_Life_Balance": ':.2f',
+        "Current_Job_Level": False  # đã hiển thị ở hover_name
+    },
     color_discrete_map={
         "Entry": "#1f77b4",
         "Mid": "#ff7f0e",
@@ -57,11 +63,13 @@ fig = px.line(
     title="Average Work-Life Balance by Years to Promotion"
 )
 
+# Cập nhật tooltip tương tác
 fig.update_layout(
     height=600,
     width=900,
     legend_title="Job Level",
-    title_x=0.5
+    title_x=0.5,
+    hovermode="x unified"  # 🔥 Tooltip cho tất cả các line tại cùng 1 điểm X
 )
 
 st.plotly_chart(fig, use_container_width=True)
