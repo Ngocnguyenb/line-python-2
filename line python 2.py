@@ -67,8 +67,8 @@ fig = px.line(
 fig.update_layout(
     height=600,
     width=900,
-    legend_title="Job Level",
-    title_x=0.5,
+    legend_title_text="Job Level",  # ✅ Đúng cú pháp
+    title_x=0.5
     hovermode="x closest" 
 )
 
