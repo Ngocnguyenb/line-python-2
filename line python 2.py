@@ -67,9 +67,9 @@ fig = px.line(
 fig.update_layout(
     height=600,
     width=900,
-    legend_title_text="Job Level",  # ✅ Đúng cú pháp
-    title_x=0.5
-    hovermode="x closest" 
+    legend_title_text="Job Level",  
+    title_x=0.5,
+    hovermode="closest" 
 )
 
 st.plotly_chart(fig, use_container_width=True)
