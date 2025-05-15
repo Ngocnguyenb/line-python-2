@@ -69,7 +69,7 @@ fig.update_layout(
     width=900,
     legend_title="Job Level",
     title_x=0.5,
-    hovermode="x unified"  # 🔥 Tooltip cho tất cả các line tại cùng 1 điểm X
+    hovermode="x closest" 
 )
 
 st.plotly_chart(fig, use_container_width=True)
