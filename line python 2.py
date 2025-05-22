@@ -63,13 +63,28 @@ fig = px.line(
     title="Average Work-Life Balance by Years to Promotion"
 )
 
-# Cập nhật tooltip tương tác
 fig.update_layout(
     height=600,
     width=900,
-    legend_title_text="Job Level",  
+    legend_title_text="Job Level",
     title_x=0.5,
-    hovermode="closest" 
+    hovermode="x",  # Compare data on hover (tương tự biểu đồ trắng)
+
+    xaxis=dict(
+        showspikes=True,
+        spikemode="across",
+        spikesnap="cursor",
+        spikedash="dot",
+        spikethickness=1,
+        spikecolor="gray"
+    ),
+    yaxis=dict(
+        showspikes=True,
+        spikemode="across",
+        spikesnap="cursor",
+        spikedash="dot",
+        spikethickness=1,
+        spikecolor="gray"
+    )
 )
 
-st.plotly_chart(fig, use_container_width=True)
